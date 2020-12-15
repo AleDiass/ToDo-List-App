@@ -1,5 +1,5 @@
 import React from 'react'
-import { AutoAuth } from '../Services/Apis';
+import { AutoAuth } from '../Services/Apis'
 import {useHistory, useLocation} from 'react-router-dom'
 import {getTodos} from '../Services/Apis'
 
