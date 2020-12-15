@@ -1,6 +1,5 @@
 import React from 'react'
 import { AutoAuth } from '../Services/Apis';
-import { DeleteLocalStorage, getLocalStorage} from '../Services/LocalStorageManager'
 import {useHistory, useLocation} from 'react-router-dom'
 import {getTodos} from '../Services/Apis'
 
