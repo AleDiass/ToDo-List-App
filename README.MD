@@ -26,7 +26,7 @@
 
 #### BackEnd Server
 
-- ###### Repository Link:
+- ###### Repository Link: https://github.com/AleDiass/ToDoList-Server-App
 
 <br>
 
@@ -61,8 +61,9 @@
 
 ##### Guide: Clone This Repository and The Server Repository:
 
-- Git Clone This
-- Git Clone Server
+- Git Clone https://github.com/AleDiass/ToDoList-Server-App.git
+- Git Clone https://github.com/AleDiass/ToDo-List-App.git
+
 - Install All Dependencies With : `Yarn Install` or `npm Install`
 
 First you need Create a Account in MongoDB and Create your User and Password in Your Cluster
