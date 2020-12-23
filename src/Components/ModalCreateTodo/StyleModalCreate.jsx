@@ -2,16 +2,19 @@ import styled from 'styled-components'
 
 
 const ModalCreateDiv = styled.main`
-    position:absolute;
+    position:fixed;
 
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
     border:1px black solid;
     display:flex;
     background:rgba(0,0,0,0.7);
     z-index:999999;
     align-items:center;
     justify-content:center;
+    
+    
+    
 
     form{
         display:flex;
@@ -28,13 +31,12 @@ const ModalCreateDiv = styled.main`
 
     }
 
-    form + button {
-        position:absolute;
-        top:-4rem;
-        right:1rem;
-        background:transparent;
-        opacity:0;
-    }
+   .close-modal{
+       background:#f3f3f3;
+       border:none;
+       outline:none;
+       
+   }
 
     svg{
         fill:#b9b9b9;

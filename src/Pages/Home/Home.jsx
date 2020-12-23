@@ -42,11 +42,17 @@ const Home = () => {
                 setErrors(false)
             },4000)
     
+            setModalVisibly(false)
         }else{
+            setModalVisibly(false)
             const updateTodos =await  getTodos()
 
+
             setTodos(updateTodos) 
-            setModalVisibly(false)
+            
+            
+
+            document.documentElement.scrollTop = document.documentElement.scrollHeight 
         }
         
     }
@@ -78,7 +84,7 @@ const Home = () => {
    
     React.useEffect(()=>{
         
-       document.documentElement.scrollTop = document.documentElement.scrollTop 
+        document.documentElement.scrollTop = document.documentElement.scrollHeight
     },[])
 
 

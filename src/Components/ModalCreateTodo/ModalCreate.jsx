@@ -6,7 +6,7 @@ import TitleChanger from '../../Services/TitleChanger'
 const ModalCreate = ({params,submit}) => {
     const {setModalVisibly,setTitle,setDesc} = params
    React.useEffect(()=>{
-    TitleChanger('Create')
+    TitleChanger('Create Modal')
     document.documentElement.scrollTop = 0;
    },[])
 
@@ -35,7 +35,7 @@ const ModalCreate = ({params,submit}) => {
         <ModalCreateDiv ref={ModalRef}>
             <div>
                 <form onSubmit={submit}>
-                    <button onClick={()=>setModalVisibly(false)}>
+                    <button className="close-modal" onClick={()=>setModalVisibly(false)}>
                         <CloseIcon/>
                     </button>
                     <input type="text" placeholder='Title' onChange={event => setTitle(event.target.value)}/>
