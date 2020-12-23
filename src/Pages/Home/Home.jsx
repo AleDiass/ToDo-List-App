@@ -54,9 +54,15 @@ const Home = () => {
     async function handleDeleteTodo(id){
         
         const deleteTodo = await DeleteTodo(id)
-        console.log(id)
+        
         if(deleteTodo){
-            window.location.reload()
+            let todoFilter = todos.filter((todo)=>{
+                return todo._id !== id
+            })
+
+            setTodos(todoFilter)
+
+            
             
         }else{
             setErrors(true)
