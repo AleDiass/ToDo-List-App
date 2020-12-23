@@ -6,7 +6,7 @@ import TitleChanger from '../../Services/TitleChanger'
 const ModalCreate = ({params,submit}) => {
     const {setModalVisibly,setTitle,setDesc} = params
    React.useEffect(()=>{
-    TitleChanger('Create Modal')
+    TitleChanger('Create Todo')
     document.documentElement.scrollTop = 0;
    },[])
 

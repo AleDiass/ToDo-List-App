@@ -23,6 +23,8 @@ const HeaderStyle = styled.header`
     section {
         position:absolute;
         right:5rem;
+        padding:2rem;
+        
 
         &:hover , &:focus{
             ul{
@@ -33,29 +35,36 @@ const HeaderStyle = styled.header`
     }
 
     ul{
+        width:20rem;
         position:absolute;
         background:#e4e4e4;
         border:1px #ccc solid;
         padding:1rem;
         opacity:0;
+        
         right: 2rem;
         visibility:hidden;
         
     }
     ul li{
         text-align:center;
-        padding:0.2rem;
+        padding:1rem;
         font-size:1.8rem;
         font-weight: 600;
         padding: 1rem 0.2rem;
         letter-spacing:2px;
         
-        &:hover a{
-            color:black;
-            
-        }
+       &:hover {
+           background:#ccc;
+       }
     
     }
+
+    ul li a {
+        text-decoration:none;
+    }
+
+
     ul li+li{
         margin: 1rem 0 0 0 ;
     }
