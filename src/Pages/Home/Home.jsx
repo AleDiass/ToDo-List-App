@@ -2,7 +2,7 @@ import React from 'react'
 import { UserInformations } from '../../Context/ContextProvider'
 import Loading from '../Loading/Loading'
 import { HomeDiv } from './StyleHome'
-import {CreateTodos, DeleteTodo} from '../../Services/Apis'
+import {CreateTodos, DeleteTodo,getTodos} from '../../Services/Apis'
 import ModalCreate from '../../Components/ModalCreateTodo/ModalCreate'
 import {ReactComponent as CloseIco} from '../../Assets/close.svg'
 import TitleChanger from '../../Services/TitleChanger'
@@ -14,15 +14,17 @@ import TitleChanger from '../../Services/TitleChanger'
 
 
 const Home = () => {
-    const {loadingAuthentication,todos,setTodoViewID} = React.useContext(UserInformations)
+    const {loadingAuthentication,todos,setTodos} = React.useContext(UserInformations)
     const [errors,setErrors] = React.useState(false);
 
-
+    const [visiblyTodo,setVisiblyTodo] = React.useState([])
     const [title,setTitle] = React.useState('')
     const [description,setDesc] = React.useState('')
     const [modalvisibly,setModalVisibly] = React.useState(false)
 
-    const todoDivs = React.useRef();
+    React.useEffect(()=>{
+        setVisiblyTodo(todos)
+    },[todos])
 
 
     
@@ -41,7 +43,10 @@ const Home = () => {
             },4000)
     
         }else{
-            window.location.reload();
+            const updateTodos =await  getTodos()
+
+            setTodos(updateTodos) 
+            setModalVisibly(false)
         }
         
     }
@@ -79,12 +84,12 @@ const Home = () => {
             <>
             {modalvisibly && <ModalCreate submit={CreateTodo} params={{setModalVisibly,setTitle,setDesc}}/>}
              
-            <HomeDiv ref={todoDivs} className='home-divs'>
+            <HomeDiv className='home-divs'>
 
              <h1>{errors ? "Error or  Todo Limit Reached" : ''}</h1>
            
                 {
-                    todos && todos.map((todo)=>{
+                    visiblyTodo && visiblyTodo.map((todo)=>{
                         return(
                             <div key={todo._id} id={todo._id}>
                                <button onClick={()=>{handleDeleteTodo(todo._id)}}> 
@@ -106,7 +111,7 @@ const Home = () => {
 
 
                 {
-                   todos && todos.length === 0 ? 
+                   visiblyTodo && visiblyTodo.length === 0 ? 
                     <h3>
                         You Dont Have Anyone ToDo , This is Good!
                     </h3>

@@ -16,6 +16,7 @@ const ContextProvider = ({children}) => {
 
 
     React.useEffect(()=>{
+        
        
         
         (async()=>{
@@ -35,10 +36,10 @@ const ContextProvider = ({children}) => {
                     history.push('/home')
 
                     const todoApi = await getTodos();
-                    if(Array.isArray(todoApi)){
+                   
                         
-                        setTodos(todoApi)
-                    }
+                    setTodos(todoApi)
+                    
 
                     
 
@@ -46,6 +47,8 @@ const ContextProvider = ({children}) => {
                    
                     
                 }
+
+                
             }
 
             setLoadingAuthentication(false)
@@ -53,7 +56,7 @@ const ContextProvider = ({children}) => {
 
         
 
-    },[history,location.pathname,data,])
+    },[history,location.pathname,data])
     
     
   

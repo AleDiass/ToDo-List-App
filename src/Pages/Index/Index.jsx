@@ -10,6 +10,14 @@ import TitleChanger from '../../Services/TitleChanger'
 
 const Index = () => {
 
+
+
+    React.useEffect(()=>{
+        TitleChanger('Login - Register')
+    },[])
+   
+
+
     const {loadingAuthentication} = React.useContext(UserInformations)
 
     const history = useHistory();
@@ -66,12 +74,7 @@ const Index = () => {
 
     }
 
-    React.useEffect(()=>{
-        TitleChanger('Login - Register')
-    },[])
-   
-
-
+    
 
 
     
