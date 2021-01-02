@@ -50,35 +50,5 @@
 <br>
 <br>
 
-#### How Use This App in LocalHost ?
-
-<br>
-<section  markdown="1">
-
-##### This App is Configured to Run WIth MongoDB Cluster, So is Hard Make This Run in LocalHost But is Possible
-
-<br>
-
-##### Guide: Clone This Repository and The Server Repository:
-
-- Git Clone https://github.com/AleDiass/ToDoList-Server-App.git
-- Git Clone https://github.com/AleDiass/ToDo-List-App.git
-
-- Install All Dependencies With : `Yarn Install` or `npm Install`
-
-First you need Create a Account in MongoDB and Create your User and Password in Your Cluster
-
-<br>
-
-- After This You need Go to the BackEnd Server and Configure with Your MongoDB Cluster Authentication URI Link
-  <br>
-
-- After You need Go to The Front App and Configure The API BASE_URL LINK in `/src/services/api`
-
-<br>
-
-- Now if All is Correct you Can Use `Yarn Start` or `npm start` With the BackEnd Server Open And Run The App In Your Local Machine
-
-</section>
 
 </div>
